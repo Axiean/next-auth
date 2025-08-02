@@ -1,9 +1,15 @@
+"use client";
+
 import SignOutButton from "@/components/SignOutButton";
 import { getServerSession } from "next-auth";
+import { getSession, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import { useEffect } from "react";
 
-export default async function DashboardPage() {
-  const session = await getServerSession();
+export default function DashboardPage() {
+  const session = useSession();
+
+  console.log(session.data?.user);
 
   if (!session) {
     redirect("/");
@@ -19,8 +25,18 @@ export default async function DashboardPage() {
           If you can see this, you are successfully logged in.
         </p>
         <p className="mt-6 font-semibold text-gray-800">
-          Welcome, {session.user?.email}!
+          Welcome, {session.data?.user?.email} !
         </p>
+
+        {/* This is the part that displays the role */}
+        {session.data?.user?.roles && session.data?.user.roles.length > 0 && (
+          <p className="mt-2 text-sm text-gray-600">
+            Your Role:{" "}
+            <span className="font-bold text-blue-600">
+              {session.data?.user.roles.join(", ")}
+            </span>
+          </p>
+        )}
 
         <SignOutButton />
       </div>

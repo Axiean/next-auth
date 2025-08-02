@@ -26,7 +26,7 @@ export default function AuthButton() {
 
   return (
     <button
-      onClick={() => signIn("auth0")}
+      onClick={() => signIn("auth0", { callbackUrl: "/dashboard" })}
       className="px-6 py-2 hover:cursor-pointer font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
     >
       Sign In with Auth0
