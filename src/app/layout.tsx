@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NextAuthProvider from "@/components/NextAuthProvider";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Next.js Auth0 App",
   description: "Implementing Auth0 with NextAuth.js",
@@ -17,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <NextAuthProvider>{children}</NextAuthProvider>
       </body>
     </html>
