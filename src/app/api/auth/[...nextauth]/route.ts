@@ -15,10 +15,8 @@ const handler = NextAuth({
     async jwt({ token, user, account, profile }) {
       if (profile) {
         const roles = profile["https://myapp.com/roles"];
-        console.log("Roles found in profile:", roles); // Add this too
         if (roles) {
           token.roles = roles;
-          console.log("DONEEEEE");
         }
       }
       return token;
