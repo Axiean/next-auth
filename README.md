@@ -19,7 +19,7 @@ The implementation adheres to modern web development best practices, including *
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14+ (App Router)
+- **Framework**: Next.js 15+ (App Router)
 - **Authentication**: NextAuth.js, Auth0
 - **Styling**: Tailwind CSS
 - **Language**: TypeScript
@@ -33,14 +33,14 @@ Follow these instructions to set up and run the project locally.
 
 ### 1. Prerequisites
 
-- Node.js (v18 or later recommended)
+- Node.js (v22 or later recommended)
 - npm, yarn, or pnpm
 - An active Auth0 account
 
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/next-auth.git
+git clone https://github.com/Axiean/next-auth.git
 cd next-auth
 ```
 
